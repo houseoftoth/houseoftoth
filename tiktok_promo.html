@@ -3,21 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok Promo Page</title>
+    <title>TikTok Promo Page - House of Toth</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
     <style>
-        body { margin: 0; overflow: hidden; background: #000; }
+        body { margin: 0; overflow: hidden; background: #000; font-family: 'Orbitron', sans-serif; }
         canvas { display: block; }
-        .overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; font-family: Arial, sans-serif; }
-        .overlay h1 { font-size: 48px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .overlay a { color: #69C9D0; text-decoration: none; font-size: 24px; }
+        .overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; }
+        .overlay h1 { font-size: 48px; text-shadow: 0 0 5px #fff, 0 0 10px #fff; margin-bottom: 20px; }
+        .overlay a { color: white; text-decoration: none; font-size: 24px; display: block; margin: 10px 0; text-shadow: 0 0 5px #fff; }
         .overlay a:hover { text-decoration: underline; }
+        .occult-symbol { width: 100px; height: 100px; margin: 0 auto 20px; display: block; }
     </style>
 </head>
 <body>
     <canvas id="canvas"></canvas>
     <div class="overlay">
+        <svg class="occult-symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+            <circle cx="50" cy="50" r="40" fill="none" stroke="white" stroke-width="2"/>
+            <circle cx="50" cy="50" r="25" fill="none" stroke="white" stroke-width="2"/>
+            <path d="M50 30 Q50 40 60 40 Q50 40 50 50 Q50 60 40 60 Q50 60 50 70" fill="none" stroke="white" stroke-width="2"/>
+            <polygon points="50,70 45,85 55,85" fill="none" stroke="white" stroke-width="2"/>
+        </svg>
         <h1>Join Our TikTok Journey!</h1>
-        <a href="https://www.tiktok.com/@houseoftoth" target="_blank">Follow @houseoftoth</a>
+        <a href="https://www.tiktok.com/@houseoftoth" target="_blank">Follow @houseoftoth on TikTok</a>
+        <a href="https://www.houseoftoth.com" target="_blank">Visit Official Site: www.houseoftoth.com</a>
     </div>
     <script>
         const canvas = document.getElementById('canvas');
@@ -32,7 +41,8 @@
                 y: Math.random() * canvas.height,
                 radius: Math.random() * 5 + 2,
                 vx: Math.random() * 2 - 1,
-                vy: Math.random() * 2 - 1
+                vy: Math.random() * 2 - 1,
+                color: `hsla(${Math.random() * 360}, 80%, 50%, 0.3)`
             });
         }
 
@@ -45,7 +55,7 @@
                 if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+                ctx.fillStyle = p.color;
                 ctx.fill();
             });
             requestAnimationFrame(animate);
