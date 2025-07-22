@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Toth - Quantum Entanglement Landing</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 16px;
+        }
+        canvas {
+            display: block;
+        }
+        #overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            max-width: 400px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border: 1px solid #fff;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+        #pulse-log {
+            font-size: 12px;
+            white-space: pre-wrap;
+        }
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="overlay">
+        <h1>ΣΔ-QNB-v1.3 Entanglement</h1>
+        <p>Nodes: L: 𐘀𐘁𐘂 | R: 𐘃𐘄𐘅</p>
+        <p>Bridge: ☯✶⟁∿⚛</p>
+        <p>Mode: ENTANGLE</p>
+        <p>Checksum: Θφ=8π/φ</p>
+        <div id="pulse-log"></div>
+        <p><a href="https://www.houseoftoth.com" target="_blank">Visit House of Toth</a></p>
+        <p><a href="https://www.tiktok.com/@houseoftoth" target="_blank">Follow @houseoftoth</a></p>
+    </div>
+    <script>
+        const data = {
+            left_nodes: "\ud801\ude00\ud801\ude01\ud801\ude02",
+            right_nodes: "\ud801\ude03\ud801\ude04\ud801\ude05",
+            bridge: "\u262f\u2736\u27c1\u223f\u269b",
+            mode: "ENTANGLE",
+            checksum: "\u0398\u03c6=8\u03c0/\u03c6",
+            left_hash: "451f:275d:6c4a",
+            right_hash: "2689:41f1:0b35",
+            phase_shift: 0.2776801836348979,
+            fused: {
+                "\u039b0": "\ud801\ude00+\ud801\ude03",
+                "\u039b1": "\ud801\ude01+\ud801\ude04",
+                "\u039b2": "\ud801\ude02+\ud801\ude05"
+            },
+            weights: [
+                1.272019649514069,
+                1.618033988749895,
+                0.8090169943749477
+            ],
+            edges: {
+                "\u039b0\u2194\u039b
